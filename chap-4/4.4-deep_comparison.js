@@ -1,29 +1,21 @@
 // to be completed
 function deepEqual(obj1, obj2){
-  var propInObj1 = 0, propInObj2 = 0;
-  if( ( (typeof obj1) == (typeof obj2) ) && ( obj1 != null || obj2 != null ) ){
-    for(var property in obj1)
-      propInObj1++;
-    for(var property in obj1)
-      propInObj2++;
-
-    if( (typeof obj1) == object & propInObj2 == propInObj1){
-      for(var prop in obj1){
-        if(typeof prop == object && prop in obj2)
-          deepEqual(obj1.prop, obj2.prop);
-        else if (typeof prop == object && prop in obj2)
-          return obj1 === obj2;
-        else
-          return false;
-      }
-    }
-    else
-      return obj1 === obj2;
-  }
-  else
+  if(obj1 === obj2)
+    return true;
+  if((obj1 == null || obj2 == null) || (typeof obj1 != "object" || typeof obj2 != "object"))
+  // this exp is necessary to filter all the types of non-object variables (including null)
+  // eg of non-object variables are number , string , undefined , NaN (number), boolean
     return false;
+  var length1 = 0, length2 = 0;
+  for(var prop in obj1)
+    length1++;
+  for(var prop in obj2){
+    length2++;
+    if(!(prop in obj1) || !deepEqual(obj1[prop], obj2[prop]))// used bracket notation because property name may be non-conventional.
+      return false;
+  }
 
-  return true;
+  return length1 === length2;
 }
 
 var obj1 = {
