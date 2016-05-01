@@ -73,3 +73,4 @@ console.log("obj1 is equal to obj3 :", deepEqual(obj1,obj3)); //false
 console.log("obj1 is equal to obj4 :", deepEqual(obj1,obj4)); //false
 console.log("obj1 is equal to obj5 :", deepEqual(obj1,obj5)); //true
 console.log("obj1 is equal to null :", deepEqual(obj1,null)); //false
+console.log("undefined is equal to undefined :", deepEqual(undefined,undefined)); //true
