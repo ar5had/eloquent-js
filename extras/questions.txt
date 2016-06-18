@@ -1,0 +1,15 @@
+This file have some questions that are yet to be solved or understood.
+
+chapter - 4
+
+Q- What happens when we use these two simultaneoously?
+   myArr.push(arguments[i]);
+   myArr[i]=arguments[i];
+Q- What is the differrence between properties and method in js?
+   myArr.reverse and myArr.reverse();
+Q- Why null data value is not enclosed in quotes while object(typeof) should be enclosed in quotes in program?
+
+
+chapter -6
+
+Q- Why inheritance is controversial but polymorphism and encapsulation are beautiful? - pg-124

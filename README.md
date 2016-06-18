@@ -2,9 +2,9 @@
 This repository contains all the exercises of 2nd edition of eloquent JS book by Marijn Haverbeke.
 
 # To run this program:
-Open console and paste the code of program on the browser's console or in codebox on http://eloquentjavascript.net/code .
+Open console and paste the code of program on the browser's console or in codebox on http://eloquentjavascript.net/code 
 
-# To open console on 
+# To open console on
 
 # Chrome
 
@@ -18,12 +18,10 @@ Open console and paste the code of program on the browser's console or in codebo
 
     Mac OS: Cmd + Opt + K
 
-# Internet Explorer 
+# Internet Explorer
 
     F12, then click on the “Console” tab
 
 # Safari
 
     Cmd + Opt + C
-
-
