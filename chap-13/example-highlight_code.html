@@ -1,0 +1,48 @@
+<body>
+  <pre data-lang="javascript">
+    function add (a, b) {
+      return a + b;
+    }
+  </pre>
+  <button type="button" name="button" onclick="hightlightAllCode();">Highlight</button>
+<script type="text/javascript">
+
+  var languages = {
+    javascript: /\b(function|return|var)\b/g,
+    c: /\b(include|void|main)\b/g
+
+  };
+
+  function highlightCode(code, lang) {
+    var text = code.textContent;
+    code.textContent = "";
+    var match, pos = 0;
+    //exec gives first occurence but using
+    //in loop it auto updates index and finds next match
+    while (match = lang.exec(text)) {
+      console.log(match[0], match[1]);
+      var before = text.slice(pos, match.index);
+      code.appendChild(document.createTextNode(before));
+      var strong = document.createElement('strong');
+      strong.appendChild(document.createTextNode(match[0]));
+      code.appendChild(strong);
+      // lang.lastIndex gives --
+      pos = lang.lastIndex;
+    }
+
+    code.appendChild(document.createTextNode(text.slice(pos)));
+  }
+
+  function hightlightAllCode() {
+    var codeTags = document.getElementsByTagName('pre');
+    for (var i = 0; i < codeTags.length; i++) {
+      var code = codeTags[i];
+      var lang = code.getAttribute('data-lang');
+      if (languages.hasOwnProperty(lang)) {
+        highlightCode(code, languages[lang]);
+      }
+    }
+  }
+
+</script>
+</body>
