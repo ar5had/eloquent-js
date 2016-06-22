@@ -1,0 +1,25 @@
+<body>
+
+    <h2 id="cat" style="position: absolute;">
+      CAT
+      <h5 id="hat" style="position: absolute;">Hat</h5>
+    </h2>
+
+
+  <script type="text/javascript">
+    var cat = document.querySelector("#cat");
+    var hat = document.querySelector("#hat");
+    var lastTime = 0, anglec = 0, angleh = 0;
+    function animate(time){
+      anglec += (time - lastTime) * .002;
+      angleh -= (time - lastTime) * .002;
+      lastTime = time;
+      cat.style.top = Math.sin(anglec) * 90 + 300;
+      cat.style.left = Math.cos(anglec) * 160 + 300;
+      hat.style.top = Math.sin(angleh) * 90 + 300;
+      hat.style.left = Math.cos(angleh) * 160 + 300;
+      requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+  </script>
+</body>
