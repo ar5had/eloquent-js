@@ -1,0 +1,18 @@
+<body>
+  
+</body>
+<script>
+  function childAppender(parent) {
+    var pNode = document.createElement(parent);
+    for(var i = 1; i < arguments.length; i++) {
+      var child = arguments[i];
+      if (typeof child == 'string') {
+        child = document.createTextNode(child);
+      }
+      pNode.appendChild(child);
+    }
+    return pNode;
+  }
+
+  document.body.appendChild(childAppender("p", "This is a paragraph",  childAppender("h2", "This is a h2 heading")));
+</script>
