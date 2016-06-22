@@ -1,0 +1,21 @@
+<body>
+  <p style="background-color: pink; margin: 30px;width: 100px; height: 50px; border: solid 5px red;">
+    Hi, how are ya!
+  </p>
+  <script>
+    var elem = document.getElementsByTagName('p')[0];
+    //offsetWidth/height = total width/height
+    var a = document.createElement('h1');
+    a.appendChild(document.createTextNode("offsetWidth/height = total width/height"));
+    document.body.appendChild(a);
+    var b = document.createElement('h1');
+    b.appendChild(document.createTextNode("client width/height = total width/height - border"));
+    document.body.appendChild(b);
+    // appending this way is wrong. figure out yourself!
+    document.body.appendChild(document.createTextNode("Offset Width = " + elem.offsetWidth));
+    document.body.appendChild(document.createTextNode("Offset height = " + elem.offsetHeight));
+    //client width/height = total width/height - border
+    document.body.appendChild(document.createTextNode("Client Width = " + elem.clientWidth));
+    document.body.appendChild(document.createTextNode("Client Height = " + elem.clientHeight));
+  </script>
+</body>
