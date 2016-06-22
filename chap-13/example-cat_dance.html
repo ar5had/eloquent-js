@@ -1,0 +1,23 @@
+<body>
+  <h1 style="margin: 50%; position: relative;">mouse
+    <p>
+      <strong>CAT</strong>
+    </p>
+  </h1>
+  <script type="text/javascript">
+    var elem = document.querySelector('p');
+    elem.style.position = "absolute";
+    var angle = 0, lastTime = null;
+    function animate(time) {
+      if(lastTime != null)
+        angle -= (time - lastTime) * .001;
+      lastTime = time;
+      elem.style.top = (Math.sin(angle) * 70) + "px";
+      elem.style.left = (Math.cos(angle) * 200) + "px";
+      requestAnimationFrame(animate);
+    }
+    //request animation frame for animate function which will
+    // automatically get a time argument. (time in ms)
+    requestAnimationFrame(animate);
+  </script>
+</body>
