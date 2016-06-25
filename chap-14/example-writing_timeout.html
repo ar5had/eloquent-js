@@ -1,0 +1,11 @@
+<textarea name="name" rows="8" cols="40"></textarea>
+<script type="text/javascript">
+  var ta = document.querySelector('textarea');
+  var timeout;
+  ta.addEventListener('keydown', function(){
+    clearTimeout(timeout);
+    timeout = setTimeout(function(){
+      console.log('You stopped typing broh');
+    }, 500);
+  });
+</script>

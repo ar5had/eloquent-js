@@ -26,3 +26,5 @@ Q - addEventListener('keypress', function(event){
 Q - Why CONSOLE.LOG is not working?
 
 Q - How para turns red for the first time in js_hover.html example ?
+
+Q - BeforeUnload() - pg-255
