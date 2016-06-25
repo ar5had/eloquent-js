@@ -1,0 +1,18 @@
+<body>
+    <p style="text-align: center;">
+      Press A or B or Cntrl + A.
+    </p>
+</body>
+
+<script type="text/javascript">
+  'useStrict';
+  addEventListener('keyDown', function(event){
+    if (event.keyCode == ('A'.charCodeAt(0)))
+      alert('You pressed A');
+    else if (event.keyCode == ('B'.charCodeAt(0)))
+      alert('You pressed B');
+    if (event.altKey && event.keyCode == ('A'.charCodeAt(0)))
+      alert('You pressed A with control key');
+
+  });
+</script>

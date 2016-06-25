@@ -1,0 +1,16 @@
+<body>
+  <button type="button" name="button">Click me!</button>
+</body>
+<script type="text/javascript">
+  var btn = document.querySelector("button");
+  btn.addEventListener("mousedown", function(event){
+    if (event.which === 1)
+      alert('left button');
+    else if (event.which === 2)
+      alert('middle button');
+    else if (event.which === 3)
+      alert('right button');
+    else
+      alert(event.which);
+  });
+</script>
