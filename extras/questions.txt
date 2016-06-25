@@ -16,3 +16,9 @@ chapter - 13
 Q- Why var a = document.createElement('h1').appendChild(document.createTextNode("offsetWidth/height = total width/height"));
    not equal to
    var a = document.createElement('h1'); a.appendChild(document.createTextNode("offsetWidth/height = total width/height"));
+
+chapter - 14
+
+Q - addEventListener('keypress', function(event){
+      console.log(String.fromCharCode(event.charCode));
+    });
