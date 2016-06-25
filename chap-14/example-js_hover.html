@@ -1,0 +1,26 @@
+<div>
+  Hover over this <strong>fancy</strong> paragraph.
+  <p>
+    this is second para
+  </p>
+</div>
+<script type="text/javascript">
+  var para = document.querySelector('div');
+  function isInside(node, target) {
+    while(node != null) {
+      if (node == target) return true;
+      node = node.parentNode;
+    }
+  }
+
+  para.addEventListener('mouseover', function(event){
+    if (!isInside(event.relatedTarget, para))
+      para.style.color = "red";
+
+  });
+  para.addEventListener('mouseout', function(event){
+    if (!isInside(event.relatedTarget, para))
+      para.style.color = "";
+
+  });
+</script>

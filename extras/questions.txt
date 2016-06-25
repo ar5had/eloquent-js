@@ -22,3 +22,7 @@ chapter - 14
 Q - addEventListener('keypress', function(event){
       console.log(String.fromCharCode(event.charCode));
     });
+
+Q - Why CONSOLE.LOG is not working?
+
+Q - How para turns red for the first time in js_hover.html example ?
