@@ -1,0 +1,22 @@
+<p>
+  Name : <input name="name" value="" data-text="ENter your name !">
+</p>
+<p>
+  Age : <input name="name" value="" data-text="ENter your age !">
+</p>
+<p id="help">
+
+</p>
+<script type="text/javascript">
+  var inp = document.querySelectorAll('input');
+  var help = document.querySelector('#help');
+  for (var i = 0; i < inp.length; i++) {
+    inp[i].addEventListener('focus', function(event){
+      var text = event.target.getAttribute('data-text');
+      help.textContent = text;
+    });
+    inp[i].addEventListener('blur', function(event) {
+      help.textContent = "";
+    });
+  }
+</script>
