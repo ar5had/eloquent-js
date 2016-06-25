@@ -1,0 +1,20 @@
+<!doctype html>
+
+<input type="text">
+<script>
+  var field = document.querySelector("input");
+  var fletters = "QWX";
+  function forbiddenInput(key) {
+    console.log(key);
+  	for (var i = 0; i < fletters.length; i++) {
+      if (key === fletters.charCodeAt(i))
+          return true;
+    }
+    return false;
+  }
+  field.addEventListener('keydown', function(event) {
+  	if (forbiddenInput(event.which)) {
+      event.preventDefault();
+    }
+  });
+</script>

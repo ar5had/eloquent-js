@@ -11,6 +11,8 @@ chapter -6
 
 Q- Why inheritance is controversial but polymorphism and encapsulation are beautiful? - pg-124
 
+Q- lang.lastIndex() pg-229 
+
 chapter - 13
 
 Q- Why var a = document.createElement('h1').appendChild(document.createTextNode("offsetWidth/height = total width/height"));
@@ -19,12 +21,12 @@ Q- Why var a = document.createElement('h1').appendChild(document.createTextNode(
 
 chapter - 14
 
-Q - addEventListener('keypress', function(event){
+Q- addEventListener('keypress', function(event){
       console.log(String.fromCharCode(event.charCode));
     });
 
-Q - Why CONSOLE.LOG is not working?
+Q- Why CONSOLE.LOG is not working?
 
-Q - How para turns red for the first time in js_hover.html example ?
+Q- How para turns red for the first time in js_hover.html example ?
 
-Q - BeforeUnload() - pg-255
+Q- BeforeUnload() - pg-255
