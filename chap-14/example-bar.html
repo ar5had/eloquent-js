@@ -1,0 +1,39 @@
+<body>
+  <p align="middle">
+    Drag the bar to change its width.
+  </p>
+  <div style="height: 20px; background: blue; width: 50px;">
+  </div>
+</body>
+<script type="text/javascript">
+  'use strict';
+  var bar = document.querySelector('div');
+  var lastX;
+  bar.addEventListener('mousedown', function(event){
+    if (event.which == 1) {
+      lastX = event.pageX;
+      addEventListener('mousemove', moved);
+      event.preventDefault();
+    }
+  });
+  function buttonPressed(event){
+    console.log(event.which, event.buttons);
+    if(event.buttons === null)
+      return event.which != 0;
+    else {
+      return event.buttons != 0;
+    }
+  }
+
+  // for checking when mouse is moved with button pressed
+  function moved(event) {
+    if (!buttonPressed(event))
+      removeEventListener('mousemove', moved);
+    else {
+      var displ = event.pageX - lastX;
+      var newWidth = Math.max(10, bar.offsetWidth + displ);
+      bar.style.width = newWidth + 'px';
+      lastX = event.pageX;
+    }
+  }
+</script>
