@@ -11,7 +11,7 @@ chapter -6
 
 Q- Why inheritance is controversial but polymorphism and encapsulation are beautiful? - pg-124
 
-Q- lang.lastIndex() pg-229 
+Q- lang.lastIndex() pg-229
 
 chapter - 13
 
@@ -30,3 +30,5 @@ Q- Why CONSOLE.LOG is not working?
 Q- How para turns red for the first time in js_hover.html example ?
 
 Q- BeforeUnload() - pg-255
+
+Q- Why are errors on running mousetrail-1.0 and if errors are because dot is being updated the how are they removed ?
