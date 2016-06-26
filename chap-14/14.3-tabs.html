@@ -1,0 +1,40 @@
+<!doctype html>
+
+<div id="wrapper">
+  <div data-tabname="one">Tab one</div>
+  <div data-tabname="two">Tab two</div>
+  <div data-tabname="three">Tab three</div>
+</div>
+<script>
+  function asTabs(node) {
+    var childs = node.querySelectorAll("div");
+    childs.forEach(function(elem, counter) {
+    	var btn = document.createElement('button');
+      	btn.textContent = childs[counter].getAttribute('data-tabname');
+      	node.insertBefore(btn, childs[0]);
+    });
+   	var btns = node.querySelectorAll('button');
+    //activating first Tab
+    activateButton(0);
+    btns.forEach(function(btn, counter){
+    	btn.addEventListener("click",function(event){
+        	activateButton(counter);
+        });
+    });
+  }
+
+  function activateButton(counter) {
+  	var textChilds = document.querySelectorAll("#wrapper div");
+    var buttons = document.querySelectorAll("#wrapper button");
+    textChilds.forEach(function(child){
+    	child.style.display = 'none';
+    });
+    buttons.forEach(function(btn){
+    	btn.style.background = '';
+    });
+    buttons[counter].style.background = 'hotpink';
+    textChilds[counter].style.display = "";
+  }
+
+  asTabs(document.querySelector("#wrapper"));
+</script>
