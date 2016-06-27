@@ -1,0 +1,15 @@
+<canvas id="canvas"></canvas>
+<script type="text/javascript">
+  var img = document.createElement('img');
+  var cx = document.querySelector('canvas').getContext('2d');
+  img.src = 'http://eloquentjavascript.net/img/player.png';
+  var iwidth = 24, iheight = 30;
+  img.addEventListener('load', function() {
+    var counter = 0;
+    setInterval(function() {
+      cx.clearRect(0, 0, iwidth, iheight);
+      cx.drawImage(img, counter * iwidth, 0, iwidth, iheight, 0, 0, iwidth, iheight);
+      counter = (counter + 1 ) % 8;
+    }, 120);
+  });
+</script>
