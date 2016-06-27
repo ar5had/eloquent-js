@@ -1,0 +1,22 @@
+
+<body>
+  <canvas id="canvas" width="600" height="1000">
+  <script type="text/javascript">
+    var cx = document.querySelector('canvas').getContext('2d');
+    function branch(length, scale, angle) {
+      cx.fillRect(0, 0, 1, length);
+      if (length < 10) return;
+      // storing canvas state before any transformation
+      cx.save();
+      cx.translate(0, length);
+      cx.rotate(-angle);
+      branch(length * scale, scale, angle);
+      cx.rotate(2 * angle);
+      branch(length * scale, scale, angle);
+      // restoring canvas previous state
+      cx.restore();
+    }
+    cx.translate(300, 0);
+    branch(100, .8, .2);
+  </script>
+</body>

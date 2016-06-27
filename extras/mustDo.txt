@@ -12,6 +12,8 @@ Chapter - 11 Project: A programming language
 
 Chapter - 15 Project: A platform game
 
+Chapter - 16 Back to the game section pg-314
+
 Chapter - 19 Project: Paint program
 
 Chapter - 21 Project: Skill sharing website
