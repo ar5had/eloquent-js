@@ -1,0 +1,44 @@
+<!doctype html>
+<canvas width="600" height="1000"></canvas>
+<script>
+
+  	var cx = document.querySelector("canvas").getContext("2d");
+
+  	function drawRect(xpos, ypos, width, height, base) {
+    	cx.strokeStyle = 'lightBlue';
+      	cx.beginPath();
+      	cx.lineWidth = 2;
+      	cx.moveTo(xpos, ypos);
+      	cx.lineTo(xpos + width, ypos);
+      	cx.lineTo(xpos + base, ypos + height);
+      	cx.lineTo(xpos - base + width, ypos + height);
+      	cx.lineTo(xpos, ypos);
+      	cx.stroke();
+    }
+
+  	function drawDiamond(xpos, ypos, edge) {
+    	cx.save();
+      	cx.translate(xpos + edge/2, ypos);
+      	cx.rotate(1/4 * Math.PI);
+      	cx.fillStyle = "red";
+      	cx.fillRect(0, 0, edge, edge);
+      	cx.restore();
+    }
+
+  	function zigZagLines(xpos, ypos, length, step) {
+    	cx.beginPath();
+      	cx.moveTo(xpos, ypos);
+      	var i = ypos + step;
+        while (i < (10 * step + ypos)) {
+     		cx.lineTo(xpos + length, i);
+          	i += step;
+          	cx.lineTo(xpos , i);
+          	i += step;
+        }
+      	cx.stroke();
+    }
+
+  	drawRect(30, 10, 100, 100, 110);
+  	drawDiamond(30, 150, 100);
+  	zigZagLines(30, 350 , 100, 10);
+</script>
