@@ -1,5 +1,5 @@
 <!doctype html>
-<canvas width="600" height="1000"></canvas>
+<canvas width="600" height="1500"></canvas>
 <script>
 
   	var cx = document.querySelector("canvas").getContext("2d");
@@ -38,7 +38,42 @@
       	cx.stroke();
     }
 
+  	function spiral(cxpos, cypos) {
+    	cx.moveTo(cxpos, cypos);
+      	var linesCount = 0, rad = 10, angle = .5;
+      	while(linesCount < 100) {
+        	rad += 1;
+          	angle += .2;
+          	cx.lineTo(cxpos + Math.sin(angle) * rad, cypos + Math.cos(angle) * rad);
+          	linesCount++;
+        }
+      	cx.stroke();
+      	cx.closePath();
+    }
+
+  	function star(xpos, ypos, rad) {
+      	cx.save();
+      	cx.translate(xpos, ypos);
+      	cx.strokeStyle = "orange";
+      	cx.beginPath();
+      	cx.moveTo(0 + rad, 0);
+      	var angle = 0, nextX, nextY;
+      	while(angle < 2* Math.PI) {
+          	angle += 1/4 * Math.PI;
+          	nextX = Math.cos(angle) * rad ;
+          	nextY = Math.sin(angle) * rad ;
+          	cx.quadraticCurveTo(0 , 0, nextX, nextY);
+      	}
+      	cx.fillStyle = 'orange';
+      	cx.fill();
+      	cx.stroke();
+    	cx.restore();
+      	cx.closePath();
+    }
+
   	drawRect(30, 10, 100, 100, 110);
   	drawDiamond(30, 150, 100);
   	zigZagLines(30, 350 , 100, 10);
+  	spiral(200, 700);
+  	star(100, 900, 50);
 </script>
