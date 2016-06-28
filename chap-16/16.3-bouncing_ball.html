@@ -3,11 +3,11 @@
 <script src="code/game_levels.js"></script>
 <script src="code/chapter/16_canvas.js"></script>
 
-<canvas width="400" height="400"></canvas>
+<canvas width="420" height="420"></canvas>
 <script>
   var cx = document.querySelector("canvas").getContext("2d");
 
-  var lastTime = null;
+  var lastTime = null, xv = 60, yv = 60, xpos = 180, ypos = 150;
   function frame(time) {
     if (lastTime != null)
       updateAnimation(Math.min(100, time - lastTime) / 1000);
@@ -17,6 +17,54 @@
   requestAnimationFrame(frame);
 
   function updateAnimation(step) {
-    // Your code here.
+    cx.clearRect(0, 0, 420, 420);
+    cx.strokeStyle = "lightBlue";
+    cx.lineWidth = 4;
+    cx.strokeRect(10, 10, 400, 400);
+    move(step);
+    var collisionInfo = collision();
+     console.log(collisionInfo, xpos, ypos);
+    if (collisionInfo.collisionOccured) {
+    	turn(collisionInfo.collidedWall);
+    }
+
+  }
+
+  function move (step) {
+    cx.beginPath();
+    cx.fillStyle = "orange";
+    cx.arc(xpos, ypos, 20, 0, 7);
+    cx.fill();
+    xpos += step * xv;
+    ypos += step * yv;
+    cx.closePath();
+  }
+
+  function collision() {
+    console.log(xpos + 20);
+  	if ((xpos + 20) > 410 || (xpos - 20) < 10)
+      return {collisionOccured: true, collidedWall : "vertical"};
+    else if ( ((ypos + 20) > 410 || (ypos - 20) < 10) && ((xpos + 20) > 410 || (xpos - 20) < 10) )
+      return {collisionOccured: true, collidedWall : "corner"};
+    else if ((ypos + 20) > 410 || (ypos - 20) < 10)
+      return {collisionOccured: true, collidedWall : "horizontal"};
+    else
+      return {collisionOccured: false, collidedWall : null};
+  }
+
+  function turn(wall) {
+  	if (wall === 'vertical') {
+    	xv = -xv;
+    }
+
+    else if (wall === 'horizontal') {
+    	yv = -yv;
+    }
+
+    else if (wall === 'corner') {
+    	xv = -xv;
+      	yv = -yv;
+    }
+
   }
 </script>
