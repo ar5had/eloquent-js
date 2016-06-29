@@ -1,0 +1,26 @@
+
+<script type="text/javascript">
+  function readFile (url, callback) {
+    var req = new XMLHttpRequest();
+    req.open('GET', url, true);
+    req.addEventListener('load', function() {
+      if (req.status < 400)
+        callback(req.responseText);
+      else {
+        callback(null, new Error("Request failed: " + req.statusText));
+      }
+    });
+    req.addEventListener('error', function() {
+      callback(null, new Error("Request failed entirely!"));
+    });
+    req.send(null);
+  }
+
+  readFile('games.txt', function(text, err) {
+    if(err != undefined)
+      console.log('Failed to fetch games.txt file: ' + err);
+    else {
+      console.log("games.txt file: " + text);
+    }
+  });
+</script>
