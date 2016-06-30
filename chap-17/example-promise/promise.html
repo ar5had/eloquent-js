@@ -1,0 +1,30 @@
+<script type="text/javascript">
+  function get(url) {
+    return new Promise(function (succeed, failure) {
+      var req = new XMLHttpRequest();
+      req.open("GET", url, true);
+      req.addEventListener('load', function() {
+        if(req.status < 400) {
+          succeed(req.responseText);
+        }
+        else {
+          failure(new Error("Request Failed: " + req.statusText));
+        }
+
+      });
+      req.addEventListener('error', function() {
+        failure(new Error("File didnt opened at all!"));
+      });
+      req.send(null);
+    });
+
+  }
+
+  get('gaes.txt').then(
+    function (text) {
+        console.log("File is :\n" + text);
+    }
+  ).catch(function (err) {
+    console.log("Error occured: " + err);
+  });
+</script>

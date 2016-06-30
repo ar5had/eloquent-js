@@ -1,0 +1,40 @@
+<body>
+</body>
+<script type="text/javascript">
+function get(url) {
+  return new Promise(function (succeed, failure) {
+    var req = new XMLHttpRequest();
+    req.open("GET", url, true);
+    req.addEventListener('load', function() {
+      if(req.status < 400) {
+        succeed(req.responseText);
+      }
+      else {
+        failure(new Error("Request Failed: " + req.statusText));
+      }
+
+    });
+    req.addEventListener('error', function() {
+      failure(new Error("File didnt opened at all!"));
+    });
+    req.send(null);
+  });
+
+}
+  function showMsg(text) {
+    var elem = document.createElement('h1');
+    elem.textContent = text;
+    return document.body.appendChild(elem);
+  }
+
+  var loading = showMsg("Loading...");
+
+  get('myjson.json').then(function(text) {
+    showMsg("Json file is " + text);
+  }).catch(function(err) {
+    console.log("From catch block - Some Error happened: " + err);
+  }).then(function() {
+    document.body.removeChild(loading);
+  });
+
+</script>
