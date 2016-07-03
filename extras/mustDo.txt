@@ -14,8 +14,7 @@ Chapter - 15 Project: A platform game
 
 Chapter - 16 Back to the game section pg-314 and last exercise
 
-Chapter - 18 target property of event element and select field
-             and file fields and storing data
+Chapter - 18 Notes app using local storage
 
 Chapter - 19 Project: Paint program
 
