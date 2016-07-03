@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <textarea name="name" rows="8" cols="40"></textarea>
+    <script type="text/javascript">
+      var ta = document.querySelector('textarea');
+      ta.addEventListener('keydown', function(event) {
+        if(event.keyCode == "M".charCodeAt(0)) {
+          replace(ta, "arshad");
+          event.preventDefault();
+        }
+      });
+
+      function replace(ta, str) {
+        var frm = ta.selectionStart;
+        var to = ta.selectionEnd;
+        console.log("from and to are ", frm, to);
+        ta.value = ta.value.slice(0, frm) + str + ta.value.slice(to);
+        ta.selectionEnd = ta.selectionStart = frm + str.length;
+      }
+    </script>
+  </body>
+</html>

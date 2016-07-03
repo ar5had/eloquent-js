@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <input type="file" >
+      <script type="text/javascript">
+          var inp = document.querySelector('input');
+          inp.addEventListener('change', function() {
+            if(inp.files.length > 0) {
+              var file = inp.files[0];
+              console.log("You have selected "+file.name+" file");
+            }
+            if(file.type) {
+              console.log("File type is "+file.type);
+            }
+          });
+      </script>
+  </body>
+</html>

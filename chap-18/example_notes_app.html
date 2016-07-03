@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Notes App</title>
+  </head>
+  <body>
+    <select></select>
+    <button type="button" name="button" onclick="addNote();">Add note</button>
+    <br/>
+    <textarea name="name" rows="8" cols="40">Enter you note here and then add it...</textarea>
+    <script type="text/javascript">
+      var ta = document.querySelector('textarea');
+      var btn = document.querySelector('button');
+      var select = document.querySelector('select');
+      var notes = JSON.parse(localStorage.getItem('notes')) || {};
+
+      ta.addEventListener('focus', function(){
+        ta.value = "";
+      });
+
+      function addToList(name) {
+        var opt = document.createElement('option');
+        opt.value = name;
+        select.appendChild(opt);
+      }
+
+    </script>
+  </body>
+</html>

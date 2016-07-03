@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <select multiple>
+      <option value ="1" >0001 </option >
+<option value ="2" >0010 </option >
+<option value ="4" >0100 </option >
+<option value ="8" >1000 </option >
+</select > = <span id ="output" >0 </span >
+    <script type="text/javascript">
+      var select = document.querySelector('select');
+      select.addEventListener('change', function() {
+      var no = 0;
+      for(var i = 0; i < select.options.length; i++) {
+        var item = select.options[i];
+        if(item.selected)
+          no += Number(item.value);
+      }
+      document.getElementById('output').textContent = no;
+    });
+    </script>
+  </body>
+</html>
