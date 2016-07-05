@@ -14,6 +14,8 @@ Chapter - 15 Project: A platform game
 
 Chapter - 16 Back to the game section pg-314 and last exercise
 
+Chapter - 17 Promises all method 
+
 Chapter - 18 Notes app using local storage
 
 Chapter - 19 Project: Paint program
