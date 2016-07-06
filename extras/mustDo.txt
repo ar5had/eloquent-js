@@ -1,4 +1,3 @@
-This document contains some things that one must do while learning this book.
 
 Chapter - 4 Great great .... example
 
@@ -14,7 +13,7 @@ Chapter - 15 Project: A platform game
 
 Chapter - 16 Back to the game section pg-314 and last exercise
 
-Chapter - 17 Promises all method 
+Chapter - 17 Promises all method
 
 Chapter - 18 Notes app using local storage
 
