@@ -34,3 +34,7 @@ Q- BeforeUnload() - pg-255
 Q- Why are errors on running mousetrail-1.0 and if errors are because dot is being updated the how are they removed ?
 
 Q- blob - pg-353
+
+Q- Difference between object.create(null) and null?
+
+Q- Clear http again.

@@ -19,4 +19,6 @@ Chapter - 18 Notes app using local storage
 
 Chapter - 19 Project: Paint program
 
+Chapter - 20 Streams, simple file server, error handling - exercises and examples
+
 Chapter - 21 Project: Skill sharing website
