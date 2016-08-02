@@ -5,8 +5,6 @@ Chapter - 6 Laying out table example
 
 Chapter - 7 Electronic life example project
 
-Chapter - 10 Modules
-
 Chapter - 11 Project: A programming language
 
 Chapter - 15 Project: A platform game

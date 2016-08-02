@@ -13,6 +13,8 @@ Q- Why inheritance is controversial but polymorphism and encapsulation are beaut
 
 Q- lang.lastIndex() pg-229
 
+Q - Chapter-10 - clear all question marked.
+
 chapter - 13
 
 Q- Why var a = document.createElement('h1').appendChild(document.createTextNode("offsetWidth/height = total width/height"));
