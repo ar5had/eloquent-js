@@ -3,7 +3,7 @@ Chapter - 4 Great great .... example
 
 Chapter - 6 Laying out table example
 
-Chapter - 7 Electronic life example project
+Chapter - 10 Regex
 
 Chapter - 11 Project: A programming language
 
